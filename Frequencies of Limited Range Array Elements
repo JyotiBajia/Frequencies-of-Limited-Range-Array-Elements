@@ -1,0 +1,21 @@
+class Solution {
+public:
+     void frequencyCount(vector<int>& arr, int N, int P) {
+        // Count the frequency of each element and store it in an unordered_map
+        std::unordered_map<int, int> mp;
+
+        
+        // Update arr[] with the count of elements
+        for(int i=0;i<N;i++){
+            mp[arr[i]]++;
+        }
+        arr.clear();
+        for(int i=1;i<=P;i++){
+            arr.push_back(mp[i]);
+        }
+        while(P<N){
+            arr.push_back(0);
+            P++;
+        }
+    }
+};
